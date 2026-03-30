@@ -56,8 +56,9 @@
     /* font-weight: 600; */
     background-color: #F7941D;
     color: #FFFFFF;
-    border: 1px solid #FFFFFF;
+    border: 1px solid #333333;
     font-weight: bold;
+    transition-duration: 1s;
 }
 .navleft button:hover{
     background-color: #2B3990;
@@ -112,11 +113,13 @@
 
 /* About Section Start */
 #about-section{
-    padding: 100px 0px;
+    padding: 70px 0px;
     background: #2B3990;
     color: #FFFFFF;
     font-family: "Roboto", sans-serif;
     line-height: 2.5rem; 
+    border-top: 2px solid #333333;
+    border-bottom: 2px solid #333333;
 }
 .about-continer{
     margin: 0px 50px;
@@ -133,13 +136,18 @@
     font-size: 2rem;
 }
 .about-content{
-    padding: 1rem 0rem;
+    padding: 3rem;
+    background: #ffffff;
+    color: #333333;
+    border-radius: .5rem;
+    border: 2px solid #333333;
+    font-weight: 700;
 }
 .about-content p{
     /* font-size: 1.5rem; */
 }
 .about-content h4{
-    color: #F7941D;
+    color: #2B3990;
     font-size: 1.5rem;
     padding-top: 1rem;
 }
@@ -149,10 +157,23 @@
 }
 .about-button a{
     padding: 1.5rem;
-    color: #2B3990;
-    background: #F7941D;
+    color: #FFFFFF;
+    background: #2B3990;
     font-weight: bold;
     border-radius: 10px;
     text-decoration: none;
     border: 1px solid #FFFFFF;
+    border: 3px solid #333333;
+    transition-duration: 1s;
+}
+.about-button a:hover{
+    color: #333333;
+    background: #FFFFFF;
+}
+/* Course section css start */
+.course-container{
+    margin: 0px 50px;
+}
+i{
+    color: red;
 }
