@@ -11,17 +11,23 @@
     padding: 20px 0px;
 }
 .navbar-conatiner{
-    margin: 0 50px;
+    margin: 0 30px;
     display: flex;
     /* align-items: center; */
     justify-content: space-between;
     align-items: center;
 }
-.logo h1{
+.logo h3{
     font-family: "Poppins", sans-serif;
+    text-align: center;
+
+}
+.logo h3 span{
+    color: #F7941D;
+    font-size: 1.5rem;
 }
 .manu{
-    display: flex;
+    /* display: flex; */
 }
 .manu ul li{
     display: inline-block;
@@ -33,5 +39,27 @@
     text-decoration: none;
     padding: 0px 10px;
     font-size: 1rem;
-    
+    font-weight: bold;
 }
+
+.manu ul li a:hover{
+    color: #F7941D;
+}
+
+.navleft{
+    margin-left: 10px;
+}
+.navleft button{
+    padding: .5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    /* font-weight: 600; */
+    background-color: #F7941D;
+    color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    font-weight: bold;
+}
+.navleft button:hover{
+    background-color: #2B3990;
+}
+
