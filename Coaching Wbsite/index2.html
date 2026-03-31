@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.S. Academy | Excellence in Education</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-blue: #2B3990;
+            --dark-blue: #1A235E;
+            --accent-orange: #F7941D;
+            --soft-orange: rgba(247, 148, 29, 0.1);
+            --white: #FFFFFF;
+            --bg-light: #F8F9FA;
+            --text-dark: #2D3436;
+            --text-gray: #636E72;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Hind Siliguri', sans-serif; color: var(--text-dark); line-height: 1.6; background: var(--white); }
+        .container { width: 85%; max-width: 1200px; margin: 0 auto; }
+        ul { list-style: none; }
+        a { text-decoration: none; transition: 0.3s; }
+        section { padding: 80px 0; }
+
+        /* 1. Navbar Section */
+        header {
+            background: var(--white);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 24px; font-weight: 700; color: var(--primary-blue); }
+        .logo span { color: var(--accent-orange); }
+        nav ul { display: flex; gap: 25px; }
+        nav ul li a { color: var(--text-dark); font-weight: 600; }
+        nav ul li a:hover { color: var(--primary-blue); }
+        .btn-apply { background: var(--accent-orange); color: white !important; padding: 10px 25px; border-radius: 50px; }
+
+        /* 2. Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+        }
+        .hero h1 { font-size: 48px; margin-bottom: 20px; }
+        .hero p { font-size: 18px; margin-bottom: 35px; opacity: 0.9; }
+        .hero-btns { display: flex; justify-content: center; gap: 20px; }
+        .btn-white { border: 2px solid white; color: white; padding: 12px 30px; border-radius: 5px; font-weight: bold; }
+        .btn-white:hover { background: white; color: var(--primary-blue); }
+
+        /* 3. About Section */
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+        .about-img { background: var(--bg-light); height: 350px; border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 60px; color: var(--primary-blue); border: 2px dashed #ddd; }
+        .about-text h2 { color: var(--primary-blue); font-size: 32px; margin-bottom: 20px; }
+        .about-text p { margin-bottom: 20px; color: var(--text-gray); }
+
+        /* 4. Offer Section (What we offer) */
+        .offer { background: var(--bg-light); }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { color: var(--primary-blue); font-size: 32px; }
+        .offer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
+        .offer-card { background: white; padding: 30px; border-radius: 15px; text-align: center; transition: 0.3s; }
+        .offer-card:hover { transform: translateY(-10px); box-shadow: var(--shadow); }
+        .offer-card i { font-size: 40px; color: var(--accent-orange); margin-bottom: 20px; }
+
+        /* 5. Course Section */
+        .course-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .course-card { border-radius: 15px; overflow: hidden; box-shadow: var(--shadow); background: white; }
+        .course-img { height: 200px; background: #ddd; }
+        .course-body { padding: 25px; }
+        .course-body h3 { margin-bottom: 15px; color: var(--primary-blue); }
+        .course-tags { display: flex; gap: 10px; margin-bottom: 15px; }
+        .tag { background: var(--soft-orange); color: var(--accent-orange); padding: 4px 12px; border-radius: 4px; font-size: 12px; font-weight: bold; }
+
+        /* 6. Teacher Panel */
+        .teacher-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; }
+        .teacher-card { text-align: center; }
+        .teacher-img { width: 150px; height: 150px; border-radius: 50%; background: #eee; margin: 0 auto 20px; border: 5px solid var(--soft-orange); }
+        .teacher-card h4 { color: var(--primary-blue); margin-bottom: 5px; }
+        .teacher-card span { color: var(--accent-orange); font-size: 14px; }
+
+        /* 7. Testimonial Section */
+        .testimonial { background: var(--primary-blue); color: white; }
+        .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .testi-card { background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px; border-left: 5px solid var(--accent-orange); }
+        .testi-card p { font-style: italic; margin-bottom: 15px; }
+        .testi-author { font-weight: bold; color: var(--accent-orange); }
+
+        /* 8. Footer Section */
+        footer { background: #111; color: white; padding: 60px 0 20px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .footer-col h4 { margin-bottom: 20px; border-bottom: 2px solid var(--accent-orange); display: inline-block; padding-bottom: 5px; }
+        .footer-col p, .footer-col li { font-size: 14px; opacity: 0.7; margin-bottom: 10px; }
+        .footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 12px; opacity: 0.5; }
+
+        @media (max-width: 768px) {
+            .about-grid { grid-template-columns: 1fr; }
+            nav ul { display: none; }
+            .hero h1 { font-size: 32px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-content">
+            <a href="#" class="logo">S.S <span>ACADEMY</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#home">হোম</a></li>
+                    <li><a href="#about">আমাদের সম্পর্কে</a></li>
+                    <li><a href="#courses">কোর্সসমূহ</a></li>
+                    <li><a href="#teachers">শিক্ষকগণ</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="btn-apply">ভর্তি ফরম</a>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>ভবিষ্যৎ গড়ার কারিগর আমরা</h1>
+            <p>বিগত ১০ বছর ধরে বিশ্বস্ততার সাথে শিক্ষার্থীদের বোর্ড পরীক্ষার সেরা প্রস্তুতি নিশ্চিত করছি।</p>
+            <div class="hero-btns">
+                <a href="#" class="btn-apply" style="padding: 12px 40px;">এখনই শুরু করুন</a>
+                <a href="#" class="btn-white">ফ্রি ক্লাস দেখুন</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" id="about">
+        <div class="about-grid">
+            <div class="about-img">
+                <i class="fas fa-university"></i>
+            </div>
+            <div class="about-text">
+                <h2>আমাদের মূল লক্ষ্য</h2>
+                <p>এস.এস একাডেমি শুধু একটি কোচিং সেন্টার নয়, এটি একটি পরিবার। আমাদের লক্ষ্য শিক্ষার্থীদের শুধু মুখস্থ নয়, বরং বুঝে শেখার মানসিকতা তৈরি করা।</p>
+                <p>আমরা প্রতিটি শিক্ষার্থীর ব্যক্তিগত সমস্যার দিকে নজর দেই এবং আধুনিক প্রযুক্তির মাধ্যমে পাঠদান নিশ্চিত করি।</p>
+                <a href="#" style="color: var(--accent-orange); font-weight: bold;">আরও পড়ুন <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="offer">
+        <div class="container">
+            <div class="section-title">
+                <h2>আমরা যা অফার করি</h2>
+            </div>
+            <div class="offer-grid">
+                <div class="offer-card">
+                    <i class="fas fa-book-open"></i>
+                    <h3>মানসম্মত নোট</h3>
+                    <p>অভিজ্ঞ শিক্ষকদের তৈরি বিশেষ লেকচার শিট।</p>
+                </div>
+                <div class="offer-card">
+                    <i class="fas fa-video"></i>
+                    <h3>রেকর্ডেড ক্লাস</h3>
+                    <p>যেকোনো সময় ক্লাস পুনরায় দেখার সুযোগ।</p>
+                </div>
+                <div class="offer-card">
+                    <i class="fas fa-user-clock"></i>
+                    <h3>২৪/৭ সাপোর্ট</h3>
+                    <p>শিক্ষার্থীদের যেকোনো সমস্যায় মেন্টর সাপোর্ট।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" id="courses">
+        <div class="section-title">
+            <h2>জনপ্রিয় কোর্সসমূহ</h2>
+        </div>
+        <div class="course-grid">
+            <div class="course-card">
+                <div class="course-img" style="background: url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=400'); background-size: cover;"></div>
+                <div class="course-body">
+                    <div class="course-tags"><span class="tag">SSC 2026</span> <span class="tag">Science</span></div>
+                    <h3>Academic Full Batch</h3>
+                    <p>গণিত, উচ্চতর গণিত, পদার্থ ও রসায়ন বিশেষ ব্যাচ।</p>
+                    <a href="#" class="btn-card" style="display:block; margin-top:15px; color:var(--primary-blue); font-weight:bold;">বিস্তারিত দেখুন <i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+            <div class="course-card">
+                <div class="course-img" style="background: url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=400'); background-size: cover;"></div>
+                <div class="course-body">
+                    <div class="course-tags"><span class="tag">Class 8</span> <span class="tag">English</span></div>
+                    <h3>Foundation Course</h3>
+                    <p>ইংরেজি ও গণিতের বেসিক স্ট্রং করার বিশেষ কোর্স।</p>
+                    <a href="#" class="btn-card" style="display:block; margin-top:15px; color:var(--primary-blue); font-weight:bold;">বিস্তারিত দেখুন <i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" id="teachers">
+        <div class="section-title">
+            <h2>আমাদের মেন্টর প্যানেল</h2>
+        </div>
+        <div class="teacher-grid">
+            <div class="teacher-card">
+                <div class="teacher-img"></div>
+                <h4>মোঃ আব্দুল্লাহ</h4>
+                <span>ম্যাথ স্পেশালিস্ট (BUET)</span>
+            </div>
+            <div class="teacher-card">
+                <div class="teacher-img"></div>
+                <h4>জান্নাতুল ফেরদৌস</h4>
+                <span>ইংরেজি বিভাগ (ঢাবি)</span>
+            </div>
+            <div class="teacher-card">
+                <div class="teacher-img"></div>
+                <h4>সোহেল রানা</h4>
+                <span>পদার্থবিজ্ঞান বিভাগ</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonial">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: white;">শিক্ষার্থীদের মতামত</h2>
+            </div>
+            <div class="testi-grid">
+                <div class="testi-card">
+                    <p>"এখানকার শিটগুলো এতই গোছানো যে বোর্ড পরীক্ষার আগে অন্য কিছু পড়তে হয়নি। গোল্ডেন এ+ পাওয়ার ক্রেডিট একাডেমির।"</p>
+                    <div class="testi-author">- রাহাত ইমতিয়াজ (SSC 2024)</div>
+                </div>
+                <div class="testi-card">
+                    <p>"টিচাররা খুব ফ্রেন্ডলি। যেকোনো প্রশ্ন হাজার বার করলেও তারা রাগ না করে বুঝিয়ে দেন।"</p>
+                    <div class="testi-author">- মালিহা বিনতে (HSC 2025)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h4 style="color:white">S.S Academy</h4>
+                <p>শিক্ষাই শক্তি, আর সঠিক শিক্ষাই আমাদের লক্ষ্য। আমরা শিক্ষার্থীদের ভবিষ্যৎ উজ্জ্বল করতে অঙ্গীকারবদ্ধ।</p>
+            </div>
+            <div class="footer-col">
+                <h4>লিঙ্কসমূহ</h4>
+                <ul>
+                    <li><a href="#" style="color:white">প্রাইভেসি পলিসি</a></li>
+                    <li><a href="#" style="color:white">শর্তাবলী</a></li>
+                    <li><a href="#" style="color:white">হেল্প সেন্টার</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>যোগাযোগ</h4>
+                <p><i class="fas fa-map-marker-alt"></i> ঢাকা, বাংলাদেশ</p>
+                <p><i class="fas fa-phone"></i> +৮৮০ ১৭০০-০০০০০০</p>
+                <p><i class="fas fa-envelope"></i> info@ssacademy.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 S.S Academy. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>

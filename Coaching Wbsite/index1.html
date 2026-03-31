@@ -1,357 +1,380 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SS Academy</title>
+    <title>এস.এস একাডেমি | আধুনিক শিক্ষা কেন্দ্র</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        .c1,.c2,.c3,.c4{
-            height: 20px;
-            width: 150px;
-            margin: 10px 0px;
+        /* --- কালার এবং ভেরিয়েবল সেটআপ --- */
+        :root {
+            --primary-blue: #2B3990;
+            --dark-blue: #1a237e;
+            --accent-orange: #F7941D;
+            --hover-orange: #e67e22;
+            --bg-light: #F8F9FA; /* সেকশন আলাদা করার জন্য হালকা গ্রে */
+            --white: #FFFFFF;
+            --text-main: #333333;
+            --text-muted: #666666;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
         }
-        .c1{
-            background-color: #333333 ;
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        .c2{
-            background-color: #2B3990 ;
+
+        body {
+            background-color: var(--white);
+            color: var(--text-main);
+            line-height: 1.7;
         }
-        .c3{
-            background-color: #F7941D ;
+
+        /* --- হেডার সেকশন --- */
+        header {
+            background-color: var(--primary-blue);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        .c4{
-            background-color: #EE1C24 ;
+
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-       
+
+        .nav-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: var(--white);
+            font-size: 22px;
+            font-weight: bold;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-orange);
+        }
+
+        .btn-nav {
+            background-color: var(--accent-orange);
+            color: white;
+            padding: 10px 22px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .btn-nav:hover {
+            background-color: var(--hover-orange);
+            transform: scale(1.05);
+        }
+
+        /* --- হিরো সেকশন (গ্রেডিয়েন্ট ব্যাকগ্রাউন্ড) --- */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+            padding: 100px 0;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 35px;
+        }
+
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn-main {
+            padding: 14px 35px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-orange { background: var(--accent-orange); color: white; }
+        .btn-white { border: 2px solid white; color: white; }
+
+        .btn-orange:hover { background: var(--hover-orange); }
+        .btn-white:hover { background: white; color: var(--primary-blue); }
+
+        /* --- কোর্স কার্ড সেকশন --- */
+        .section-title {
+            text-align: center;
+            padding: 80px 0 50px;
+        }
+
+        .section-title h2 {
+            color: var(--primary-blue);
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: 0.3s;
+            border-bottom: 4px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-bottom: 4px solid var(--accent-orange);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 200px;
+            background: #ddd; /* ইমেজ না থাকলে এটি দেখাবে */
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 25px;
+        }
+
+        .card-body h3 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+
+        .card-info {
+            list-style: none;
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .card-info li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card-info i { color: var(--accent-orange); width: 18px; }
+
+        .btn-card {
+            display: block;
+            text-align: center;
+            background: var(--bg-light);
+            color: var(--primary-blue);
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-card:hover {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        /* --- আমাদের সম্পর্কে (About) --- */
+        .about {
+            background-color: var(--bg-light);
+            padding: 100px 0;
+        }
+
+        .about-box {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .about-text { flex: 1.5; }
+        .about-text h2 { color: var(--primary-blue); margin-bottom: 20px; }
+        .about-text span { color: var(--accent-orange); font-weight: bold; }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .feature-item {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .feature-item i { color: var(--accent-orange); margin-right: 8px; }
+
+        /* --- ফুটার --- */
+        footer {
+            background-color: #111;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        footer p { opacity: 0.6; font-size: 14px; }
+
+        /* রেসপনসিভ */
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .about-box { flex-direction: column; padding: 30px; }
+            .hero h1 { font-size: 30px; }
+            .feature-list { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bright Minds Coaching</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="font-sans text-gray-800">
 
-  <!-- Header / Navbar -->
-  <header class="bg-[#2B3990] text-white sticky top-0 z-50 shadow">
-    <div class="container mx-auto flex justify-between items-center p-4">
-      <h1 class="text-xl font-bold">SS Academy</h1>
-      <nav class="space-x-4 hidden md:flex">
-        <a href="#home" class="hover:text-[#F7941D]">Home</a>
-        <a href="#about" class="hover:text-[#F7941D]">About</a>
-        <a href="#courses" class="hover:text-[#F7941D]">Courses</a>
-        <a href="#faculty" class="hover:text-[#F7941D]">Faculty</a>
-        <a href="#testimonials" class="hover:text-[#F7941D]">Testimonials</a>
-        <a href="#contact" class="hover:text-[#F7941D]">Contact</a>
-      </nav>
-      <button class="bg-[#F7941D] text-white px-4 py-2 rounded hover:bg-[#EE1C24]">Enroll Now</button>
-    </div>
-  </header>
-
-  <!-- Hero Section -->
-  <section id="home" class="bg-white py-20 text-center">
-    <h2 class="text-4xl font-bold text-[#2B3990]">Achieve Excellence with Expert Guidance</h2>
-    <p class="mt-4 text-gray-800">Your success is our mission. Join Bright Minds Coaching today!</p>
-    <div class="mt-6 space-x-4">
-      <button class="bg-[#F7941D] text-white px-6 py-3 rounded hover:bg-[#EE1C24]">Join Now</button>
-      <button class="bg-[#2B3990] text-white px-6 py-3 rounded hover:bg-[#F7941D]">Free Trial</button>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="bg-white py-20">
-    <div class="container mx-auto text-center max-w-3xl">
-      <h2 class="text-3xl font-bold text-[#2B3990]">About Us</h2>
-      <p class="mt-4 text-gray-800">Bright Minds Coaching has been empowering students for over 10 years with experienced faculty and proven methods.</p>
-      <p class="mt-2 text-gray-800">Our Mission: To nurture excellence and confidence in every student.</p>
-      <p class="mt-2 text-gray-800">Our Vision: To be the leading coaching center for [Exam/Subject].</p>
-    </div>
-  </section>
-
-  <!-- Courses Section -->
-  <section id="courses" class="bg-[#f5f5f5] py-20">
-    <div class="container mx-auto text-center">
-      <h2 class="text-3xl font-bold text-[#2B3990]">Our Courses</h2>
-      <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Course Card -->
-        <div class="bg-white p-6 rounded shadow">
-          <h3 class="text-xl font-bold text-[#2B3990]">Mathematics Mastery</h3>
-          <p class="text-gray-800 mt-2">Duration: 3 Months</p>
-          <p class="text-gray-800 mt-1">Batch: Morning / Evening</p>
-          <button class="mt-4 bg-[#F7941D] text-white px-4 py-2 rounded hover:bg-[#EE1C24]">Enroll Now</button>
+    <header>
+        <div class="container nav-box">
+            <a href="#" class="logo">S.S ACADEMY</a>
+            <nav>
+                <ul>
+                    <li><a href="#">হোম</a></li>
+                    <li><a href="#">কোর্স</a></li>
+                    <li><a href="#">শিক্ষকগণ</a></li>
+                    <li><a href="#">যোগাযোগ</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="btn-nav">ভর্তি ফরম</a>
         </div>
-        <div class="bg-white p-6 rounded shadow">
-          <h3 class="text-xl font-bold text-[#2B3990]">Physics Foundation</h3>
-          <p class="text-gray-800 mt-2">Duration: 4 Months</p>
-          <p class="text-gray-800 mt-1">Batch: Afternoon</p>
-          <button class="mt-4 bg-[#F7941D] text-white px-4 py-2 rounded hover:bg-[#EE1C24]">Enroll Now</button>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>সাফল্যের পথে আপনার নির্ভরযোগ্য সঙ্গী</h1>
+            <p>বিগত ১০ বছর ধরে আমরা হাজারো শিক্ষার্থীর স্বপ্ন পূরণে কাজ করে যাচ্ছি। আজই আমাদের অভিজ্ঞ শিক্ষক মন্ডলীর সাথে আপনার যাত্রা শুরু করুন।</p>
+            <div class="hero-btns">
+                <a href="#" class="btn-main btn-orange">ভর্তি চলছে</a>
+                <a href="#" class="btn-main btn-white">ফ্রি ডেমো ক্লাস</a>
+            </div>
         </div>
-        <div class="bg-white p-6 rounded shadow">
-          <h3 class="text-xl font-bold text-[#2B3990]">Chemistry Advance</h3>
-          <p class="text-gray-800 mt-2">Duration: 2 Months</p>
-          <p class="text-gray-800 mt-1">Batch: Weekend</p>
-          <button class="mt-4 bg-[#F7941D] text-white px-4 py-2 rounded hover:bg-[#EE1C24]">Enroll Now</button>
+    </section>
+
+    <section class="container">
+        <div class="section-title">
+            <h2>আমাদের স্পেশাল ব্যাচসমূহ</h2>
+            <p>সঠিক ব্যাচ নির্বাচন করে আপনার পড়াশোনাকে করুন আরও সহজ</p>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Faculty Section -->
-  <section id="faculty" class="bg-white py-20">
-    <div class="container mx-auto text-center">
-      <h2 class="text-3xl font-bold text-[#2B3990]">Meet Our Experts</h2>
-      <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Faculty Card -->
-        <div class="bg-white p-6 rounded shadow">
-          <img src="https://via.placeholder.com/150" alt="Dr. Anika Rahman" class="mx-auto rounded-full">
-          <h3 class="text-xl font-bold text-[#2B3990] mt-4">Dr. Anika Rahman</h3>
-          <p class="text-gray-800">PhD Physics | Concept Clarity & Problem Solving</p>
+        <div class="course-grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=400" alt="Academic" class="card-img">
+                <div class="card-body">
+                    <h3>Evening Academic Batch</h3>
+                    <ul class="card-info">
+                        <li><i class="fas fa-graduation-cap"></i> ক্লাস ৯ - ১০ (SSC 2026)</li>
+                        <li><i class="fas fa-clock"></i> বিকেল ৪:০০ - রাত ৮:০০</li>
+                        <li><i class="fas fa-file-alt"></i> নিয়মিত মডেল টেস্ট</li>
+                    </ul>
+                    <a href="#" class="btn-card">বিস্তারিত দেখুন</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=400" alt="Foundation" class="card-img">
+                <div class="card-body">
+                    <h3>Foundation Course</h3>
+                    <ul class="card-info">
+                        <li><i class="fas fa-graduation-cap"></i> ক্লাস ৬ - ৮</li>
+                        <li><i class="fas fa-clock"></i> সকাল ১০:০০ - দুপুর ১:০০</li>
+                        <li><i class="fas fa-check-circle"></i> বেসিক গণিত ও ইংরেজি</li>
+                    </ul>
+                    <a href="#" class="btn-card">বিস্তারিত দেখুন</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=400" alt="Special" class="card-img">
+                <div class="card-body">
+                    <h3>Weekend Programs</h3>
+                    <ul class="card-info">
+                        <li><i class="fas fa-graduation-cap"></i> সকল ক্লাসের জন্য</li>
+                        <li><i class="fas fa-calendar-alt"></i> শুক্রবার ও শনিবার</li>
+                        <li><i class="fas fa-star"></i> স্পেশাল নোট ও শিট</li>
+                    </ul>
+                    <a href="#" class="btn-card">বিস্তারিত দেখুন</a>
+                </div>
+            </div>
         </div>
-        <div class="bg-white p-6 rounded shadow">
-          <img src="https://via.placeholder.com/150" alt="Mr. Rafiq Islam" class="mx-auto rounded-full">
-          <h3 class="text-xl font-bold text-[#2B3990] mt-4">Mr. Rafiq Islam</h3>
-          <p class="text-gray-800">MSc Mathematics | Advanced Problem Solving</p>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <div class="about-box">
+                <div class="about-text">
+                    <h2>কেন <span>এস.এস একাডেমি</span> সেরা?</h2>
+                    <p>আমরা বিশ্বাস করি প্রতিটি শিক্ষার্থী ইউনিক। তাই আমাদের টিচিং মেথড এমনভাবে সাজানো হয়েছে যাতে দুর্বল শিক্ষার্থীরাও সহজে মূল বিষয়গুলো বুঝতে পারে।</p>
+                    
+                    <div class="feature-list">
+                        <div class="feature-item"><i class="fas fa-user-tie"></i> অভিজ্ঞ মেন্টর প্যানেল</div>
+                        <div class="feature-item"><i class="fas fa-laptop-code"></i> আধুনিক মাল্টিমিডিয়া ক্লাস</div>
+                        <div class="feature-item"><i class="fas fa-notes-medical"></i> মানসম্মত লেকচার শিট</div>
+                        <div class="feature-item"><i class="fas fa-users"></i> ব্যক্তিগত কাউন্সিলিং</div>
+                    </div>
+                </div>
+                <div class="about-img">
+                    <div style="background: var(--primary-blue); width: 250px; height: 250px; border-radius: 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 50px;">
+                        <i class="fas fa-school"></i>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Testimonials Section -->
-  <section id="testimonials" class="bg-[#2B3990] py-20 text-white">
-    <div class="container mx-auto text-center max-w-3xl">
-      <h2 class="text-3xl font-bold">What Our Students Say</h2>
-      <div class="mt-10 space-y-8">
-        <div>
-          <p class="text-lg">"Bright Minds Coaching helped me achieve my dream score!"</p>
-          <p class="mt-2 text-[#F7941D] font-bold">- John D.</p>
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 S.S Academy. All Rights Reserved. <br> Powered by Excellence in Education.</p>
         </div>
-        <div>
-          <p class="text-lg">"Excellent faculty and guidance, highly recommend."</p>
-          <p class="mt-2 text-[#F7941D] font-bold">- Sara K.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </footer>
 
-  <!-- Contact Section -->
-  <section id="contact" class="bg-white py-20">
-    <div class="container mx-auto max-w-3xl text-center">
-      <h2 class="text-3xl font-bold text-[#2B3990]">Get in Touch</h2>
-      <form class="mt-10 space-y-4">
-        <input type="text" placeholder="Name" class="w-full p-3 border border-gray-300 rounded">
-        <input type="email" placeholder="Email" class="w-full p-3 border border-gray-300 rounded">
-        <input type="tel" placeholder="Phone" class="w-full p-3 border border-gray-300 rounded">
-        <textarea placeholder="Message" class="w-full p-3 border border-gray-300 rounded"></textarea>
-        <button class="bg-[#F7941D] text-white px-6 py-3 rounded hover:bg-[#EE1C24]">Submit</button>
-      </form>
-      <div class="mt-6 text-gray-800">
-        <p>Address: 123 Main Street, Dhaka, Bangladesh</p>
-        <p>Phone: +880 1234 567 890</p>
-        <p>Email: contact@brightminds.com</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-[#333333] text-white py-6">
-    <div class="container mx-auto text-center">
-      <div class="space-x-4 mb-2">
-        <a href="#home" class="hover:text-[#F7941D]">Home</a>
-        <a href="#about" class="hover:text-[#F7941D]">About</a>
-        <a href="#courses" class="hover:text-[#F7941D]">Courses</a>
-        <a href="#contact" class="hover:text-[#F7941D]">Contact</a>
-      </div>
-      <div class="mb-2">
-        Social: FB | Instagram | LinkedIn
-      </div>
-      <p>© 2026 Bright Minds Coaching. All Rights Reserved.</p>
-    </div>
-  </footer>
-
-</body>
-</html>
-<section class="categories">
-  <h2 class="title">Our Programs</h2>
-  <p class="subtitle">Choose the right batch for your learning journey</p>
-
-  <div class="card-grid">
-
-    <!-- Card 1 -->
-    <div class="cat-card">
-      <div class="icon">🌆</div>
-      <h3>Evening Academic Batch</h3>
-      <p class="tagline">After-school guided learning for better results</p>
-
-      <ul>
-        <li>📚 Class 6 – HSC 2nd Year</li>
-        <li>🕒 Evening Schedule</li>
-        <li>👨‍🏫 All Subjects Covered</li>
-      </ul>
-
-      <a href="#" class="btn">View Batches →</a>
-    </div>
-
-    <!-- Card 2 -->
-    <div class="cat-card">
-      <div class="icon">📅</div>
-      <h3>Weekend Special Programs</h3>
-      <p class="tagline">Focused learning for extra improvement</p>
-
-      <ul>
-        <li>🎯 Scholarship Preparation</li>
-        <li>🔬 Science & Commerce Groups</li>
-        <li>📘 Class 5, 8, 9–10</li>
-      </ul>
-
-      <a href="#" class="btn">Explore Programs →</a>
-    </div>
-
-    <!-- Card 3 -->
-    <div class="cat-card">
-      <div class="icon">☀️</div>
-      <h3>Day Shift Foundation</h3>
-      <p class="tagline">Strong base building from an early stage</p>
-
-      <ul>
-        <li>📚 Class 3 – 9</li>
-        <li>🕒 Day Time Classes</li>
-        <li>✏️ Common Subjects</li>
-      </ul>
-
-      <a href="#" class="btn">See Details →</a>
-    </div>
-
-    <!-- Card 4 -->
-    <div class="cat-card">
-      <div class="icon">🌅</div>
-      <h3>Morning Excellence Batch</h3>
-      <p class="tagline">Start your day with focused learning</p>
-
-      <ul>
-        <li>📚 Class 3 – 10</li>
-        <li>🕒 Morning Shift</li>
-        <li>🚀 Daily Practice & Guidance</li>
-      </ul>
-
-      <a href="#" class="btn">Join Now →</a>
-    </div>
-
-  </div>
-</section>
-
-<style>
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #f5f7fb;
-}
-
-/* Section */
-.categories {
-  padding: 80px 20px;
-  text-align: center;
-}
-
-.title {
-  font-size: 36px;
-  color: #1a73e8;
-  margin-bottom: 10px;
-}
-
-.subtitle {
-  color: #666;
-  margin-bottom: 50px;
-}
-
-/* Grid */
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
-}
-
-/* Card */
-.cat-card {
-  background: #fff;
-  padding: 30px 25px;
-  border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  transition: 0.4s;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Hover */
-.cat-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-}
-
-/* Icon */
-.icon {
-  font-size: 40px;
-  margin-bottom: 15px;
-}
-
-/* Title */
-.cat-card h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
-  color: #222;
-}
-
-/* Tagline */
-.tagline {
-  font-size: 14px;
-  color: #777;
-  margin-bottom: 15px;
-}
-
-/* List */
-.cat-card ul {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 20px;
-}
-
-.cat-card ul li {
-  font-size: 14px;
-  color: #555;
-  margin-bottom: 8px;
-}
-
-/* Button */
-.btn {
-  display: inline-block;
-  padding: 10px 20px;
-  border-radius: 8px;
-  background: linear-gradient(135deg, #1a73e8, #00c6ff);
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  opacity: 0.85;
-}
-
-/* Responsive */
-@media (max-width: 1100px) {
-  .card-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .card-grid {
-    grid-template-columns: 1fr;
-  }
-}
-</style>
 </body>
 </html>

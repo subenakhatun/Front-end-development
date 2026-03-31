@@ -120,28 +120,35 @@
     line-height: 2.5rem; 
     border-top: 2px solid #333333;
     border-bottom: 2px solid #333333;
+    
 }
 .about-continer{
     margin: 0px 50px;
 }
-.about-top{
+.about-top, .course-top{
     text-align: center;
 }
 .about-top h1{
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: #F7941D;
 }
 .about-top h3{
-    padding: 2rem 0rem;
-    font-size: 2rem;
+    padding: 1rem 0rem;
+    font-size: 1.5rem;
 }
 .about-content{
-    padding: 3rem;
-    background: #ffffff;
+    padding: 1.5rem;
+    background: #f5f7fb;
     color: #333333;
     border-radius: .5rem;
     border: 2px solid #333333;
-    font-weight: 700;
+}
+.about-content ul li{
+    list-style: none;
+}
+.about-content ul li i{
+    color: #F7941D;
+    padding-right: 10px;
 }
 .about-content p{
     /* font-size: 1.5rem; */
@@ -156,7 +163,7 @@
     text-align: center;
 }
 .about-button a{
-    padding: 1.5rem;
+    padding: 1rem;
     color: #FFFFFF;
     background: #2B3990;
     font-weight: bold;
@@ -171,9 +178,77 @@
     background: #FFFFFF;
 }
 /* Course section css start */
+#our-course{
+    background: #f5f7fb;
+     padding: 70px 0px;
+}
 .course-container{
     margin: 0px 50px;
+   
 }
-i{
-    color: red;
+.course-content{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 4 column */
+    gap: 2rem; /* column/row এর মধ্যে spacing */
+    /* max-width: 1200px; */
+}
+.evening-imgae img{
+    width: 100%;
+}
+.course-top{
+    padding-bottom: 3.5rem;
+}
+.course-top h1{
+    font-size: 2.5rem;
+    color: #2B3990;
+    padding-bottom: 1rem;
+}
+.course-top h3{
+    /* padding: 2rem 0rem; */
+    font-size: 1.5rem;
+}
+.course-items{
+    background: #FFFFFF;
+    padding: 1rem;
+    border-radius: 1rem;
+    
+}
+
+
+.course-items-content{
+    /* background: #f5f7fb; */
+    
+}
+.course-items-content h3{
+    font-size: 1.5rem;
+    color: #2B3990;
+    padding-bottom: .75rem;
+    padding-top: 1rem;
+    font-weight: 900;
+}
+.course-items-content h4{
+    color: #333333;
+    padding-bottom: 1.5rem;
+    font-weight: 700;
+    font-size: 1rem;
+}
+.course-items-content p{
+    line-height: 1.5rem;
+    color: #2B3990;
+    font-weight: 700;
+    font-size: 12px;
+}
+.course-items-content i{
+    color:#EE1C24;
+    padding-right: 1rem;
+}
+
+.course-button a button{
+     font-size:  1rem;
+     padding: .5rem 1rem;
+     font-weight: 700;
+     background: #2B3990;
+     color: #FFFFFF; 
+     border: 1px solid #F7941D;
+     margin-top: 1rem;
 }
