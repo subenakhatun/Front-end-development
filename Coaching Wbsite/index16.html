@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>কোচিং গ্যালারি সেকশন (নতুন কালার)</title>
+    <style>
+        /* --- বেসিক সিএসএস রীসেট --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Hind Siliguri', sans-serif; /* বাংলা ফন্ট */
+        }
+
+        body {
+            /* নতুন ব্যাকগ্রাউন্ড কালার - ডার্ক ব্লু */
+            background-color: #0d1b2a; 
+            color: #e0e1dd; /* হালকা সাদাটে টেক্সট কালার */
+            padding: 20px;
+        }
+
+        /* --- গ্যালারি সেকশন স্টাইল --- */
+        .coaching-gallery-section {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 30px;
+            /* কন্টেইনারের ব্যাকগ্রাউন্ড - একটু হালকা ডার্ক */
+            background: #1b263b; 
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        /* সেকশন হেডার */
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .gallery-header h2 {
+            font-size: 38px;
+            /* হেডারের টেক্সট কালার - হালকা কমলা/হলুদ */
+            color: #ffb703; 
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+            font-weight: 700;
+        }
+
+        /* হেডারের নিচে সুন্দর দাগ */
+        .gallery-header h2::after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 4px;
+            /* দাগের কালার - টেক্সটের সাথে মিলিয়ে */
+            background-color: #ffb703; 
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .gallery-header p {
+            font-size: 19px;
+            color: #a0aab5; /* একটু ধূসর টেক্সট */
+        }
+
+        /* --- ছবি গ্রিড স্টাইল --- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* রেসপন্সিভ গ্রিড */
+            gap: 25px; /* ছবির মাঝের জায়গা */
+        }
+
+        /* প্রতিটি ছবির কন্টেইনার */
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            height: 280px; /* ছবির নির্দিষ্ট উচ্চতা */
+            border: 2px solid transparent; /* হোভারের জন্য বর্ডার */
+        }
+
+        /* হোভার ইফেক্ট (মাউস নিলে) */
+        .gallery-item:hover {
+            transform: translateY(-8px) scale(1.02); /* একটু উপরে উঠবে ও বড় হবে */
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+            /* হোভার করলে হালকা কমলা বর্ডার */
+            border-color: rgba(255, 183, 3, 0.5); 
+        }
+
+        /* আসল ছবি */
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* ছবি যাতে ফেটে বা চেপ্টা না হয়ে যায় */
+            transition: transform 0.6s ease;
+            filter: grayscale(20%); /* ছবি একটু ধূসর, হোভারে কালারফুল হবে */
+        }
+
+        /* হোভার করলে ছবি জুম হবে এবং কালারফুল হবে */
+        .gallery-item:hover img {
+            transform: scale(1.15);
+            filter: grayscale(0%);
+        }
+
+        /* ছবির ওপরের কালো আবরণ এবং টেক্সট */
+        .image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 25px;
+            /* নিচ থেকে ডার্ক ব্লু গ্রেডিয়েন্ট */
+            background: linear-gradient(to top, rgba(13, 27, 42, 0.95), transparent); 
+            color: #fff;
+            opacity: 0; /* প্রথমে অদৃশ্য থাকবে */
+            transition: opacity 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        /* হোভার করলে টেক্সট দেখা যাবে */
+        .gallery-item:hover .image-overlay {
+            opacity: 1;
+        }
+
+        .image-overlay h3 {
+            font-size: 22px;
+            margin-bottom: 8px;
+            font-weight: 600;
+            /* ওভারলেতে টেক্সট কালার - হালকা কমলা */
+            color: #ffb703; 
+        }
+
+        .image-overlay p {
+            font-size: 15px;
+            opacity: 0.9;
+            color: #e0e1dd; /* হালকা সাদাটে টেক্সট */
+        }
+
+        /* --- মোবাইল রেসপন্সিভ --- */
+        @media (max-width: 768px) {
+            .gallery-header h2 {
+                font-size: 30px;
+            }
+            .gallery-header p {
+                font-size: 17px;
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 20px;
+            }
+            .gallery-item {
+                height: 220px;
+            }
+        }
+        
+        /* বাংলা ফন্টের জন্য Google Fonts লিঙ্ক */
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <section class="coaching-gallery-section">
+        
+        <div class="gallery-header">
+            <h2>আমাদের ক্যাম্পাস গ্যালারি</h2>
+            <p>আমাদের পড়াশোনার পরিবেশ, কার্যক্রম এবং সাফল্যের কিছু মুহূর্ত</p>
+        </div>
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=800&auto=format&fit=crop" alt="কোচিং এ পড়াশোনা">
+                <div class="image-overlay">
+                    <h3>মনোযোগ দিয়ে পড়াশোনা</h3>
+                    <p>ক্লাসরুমে ছাত্রদের পড়ার মুহূর্ত</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?q=80&w=800&auto=format&fit=crop" alt="কোচing এর পরিবেশ">
+                <div class="image-overlay">
+                    <h3>আমাদের ক্লাসরুম</h3>
+                    <p>সুপরিসর ও আধুনিক পড়ার পরিবেশ</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=800&auto=format&fit=crop" alt="পরীক্ষা গ্রহণ">
+                <div class="image-overlay">
+                    <h3>সাপ্তাহিক মূল্যায়ন</h3>
+                    <p>নিয়মিত পরীক্ষা নেয়ার দৃশ্য</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1523240795204-5a417193917a?q=80&w=800&auto=format&fit=crop" alt="ফলাফল প্রকাশ">
+                <div class="image-overlay">
+                    <h3>সাফল্যের আনন্দ</h3>
+                    <p>মেধাবী ছাত্রদের ফলাফল প্রকাশের মুহূর্ত</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop" alt="গ্রুপ স্টাডি">
+                <div class="image-overlay">
+                    <h3>গ্রুপ স্টাডি সেশন</h3>
+                    <p>একত্রে সমস্যা সমাধানের ক্লাস</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=800&auto=format&fit=crop" alt="শিক্ষক ও ছাত্র">
+                <div class="image-overlay">
+                    <h3>পরামর্শ ও গাইডেন্স</h3>
+                    <p>শিক্ষকদের সাথে ছাত্রদের মতবিনিময়</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+    </body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>এস.এস একাডেমি | আপনার স্বপ্নের পাশে</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- কালার ভেরিয়েবল (আপনার ডকুমেন্টেশন অনুযায়ী) --- */
+        :root {
+            --p-blue: #2B3990;     --d-blue: #1a237e;
+            --orange: #F7941D;     --h-orange: #e67e22;
+            --bg-light: #F8F9FA;   --white: #FFFFFF;
+            --text-333: #333333;   --text-666: #666666;
+            --red-accent: #EE1C24; --shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Hind Siliguri', sans-serif; color: var(--text-333); overflow-x: hidden; }
+        .container { width: 90%; max-width: 1200px; margin: 0 auto; }
+        a { text-decoration: none; transition: 0.3s; }
+        ul { list-style: none; }
+
+        /* --- 1. Navbar Section --- */
+        header { background: var(--p-blue); padding: 15px 0; position: sticky; top: 0; z-index: 1000; }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { color: var(--white); font-size: 22px; font-weight: 700; }
+        .logo span { color: var(--orange); }
+        
+        .menu ul { display: flex; gap: 15px; }
+        .menu ul li a { color: var(--white); font-size: 14px; font-weight: 600; }
+        .menu ul li a:hover { color: var(--orange); }
+
+        /* Login Dropdown */
+        .login-dropdown { position: relative; display: inline-block; }
+        .dropbtn { background: var(--orange); color: white; padding: 8px 15px; border-radius: 5px; font-weight: bold; cursor: pointer; }
+        .dropdown-content { display: none; position: absolute; background: white; min-width: 160px; box-shadow: var(--shadow); border-radius: 5px; right: 0; }
+        .dropdown-content a { color: var(--text-333); padding: 12px 16px; display: block; font-size: 14px; }
+        .dropdown-content a:hover { background: var(--bg-light); color: var(--p-blue); }
+        .login-dropdown:hover .dropdown-content { display: block; }
+
+        /* --- 2. Hero Section --- */
+        .hero { padding: 80px 0; background: var(--white); display: flex; align-items: center; gap: 40px; }
+        .hero-img { flex: 1; }
+        .hero-img img { width: 100%; border-radius: 15px; box-shadow: var(--shadow); }
+        .hero-text { flex: 1; }
+        .hero-text h1 { font-size: 38px; color: var(--p-blue); margin-bottom: 20px; }
+        .hero-text p { color: var(--red-accent); font-weight: bold; margin-bottom: 20px; }
+
+        /* --- 3. Coaching Gallery --- */
+        .gallery { background: var(--bg-light); padding: 80px 0; text-align: center; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 30px; }
+        .gallery-item { height: 200px; background: #ddd; border-radius: 10px; overflow: hidden; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .gallery-item:hover img { transform: scale(1.1); }
+
+        /* --- 4. Courses Section --- */
+        .section-padding { padding: 80px 0; }
+        .section-title { text-align: center; color: var(--p-blue); margin-bottom: 40px; }
+        .course-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .course-card { background: white; border-radius: 15px; box-shadow: var(--shadow); overflow: hidden; text-align: center; border-bottom: 4px solid var(--p-blue); }
+        .course-card:hover { border-bottom-color: var(--orange); }
+        .course-card img { width: 100%; height: 200px; object-fit: cover; }
+        .course-body { padding: 25px; }
+        .course-body h3 { color: var(--p-blue); margin-bottom: 10px; }
+        .btn-details { display: inline-block; margin-top: 15px; padding: 8px 25px; background: var(--p-blue); color: white; border-radius: 5px; }
+
+        /* --- 5. Testimonial Section (Slide logic) --- */
+        .testimonial { background: var(--p-blue); color: white; }
+        .testi-container { display: flex; gap: 20px; overflow-x: auto; padding-bottom: 20px; }
+        .testi-card { min-width: 300px; background: rgba(255,255,255,0.1); padding: 25px; border-radius: 10px; }
+        .video-placeholder { background: #000; height: 150px; margin-top: 15px; display: flex; align-items: center; justify-content: center; cursor: pointer; border-radius: 5px; }
+
+        /* --- 6. Teacher Panel --- */
+        .teacher-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; }
+        .teacher-card { text-align: center; padding: 20px; background: var(--bg-light); border-radius: 15px; }
+        .t-img { width: 120px; height: 120px; border-radius: 50%; background: #ccc; margin: 0 auto 15px; border: 4px solid var(--orange); }
+        .btn-more { display: block; width: 200px; margin: 40px auto 0; background: var(--orange); color: white; padding: 10px; border-radius: 5px; text-align: center; font-weight: bold; }
+
+        /* --- 7. Footer --- */
+        footer { background: #111; color: white; padding: 50px 0 20px; }
+        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; border-bottom: 1px solid #333; padding-bottom: 30px; }
+        .copyright { text-align: center; margin-top: 20px; font-size: 13px; opacity: 0.6; }
+
+        @media (max-width: 768px) {
+            .hero { flex-direction: column; text-align: center; }
+            .menu { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-content">
+            <div class="logo">এস.এস <span>একাডেমি</span></div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">Courses</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Testimonial</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="login-dropdown">
+                <div class="dropbtn">Login <i class="fas fa-caret-down"></i></div>
+                <div class="dropdown-content">
+                    <a href="#">Student Login</a>
+                    <a href="#">Teacher Login</a>
+                    <a href="#">Management Login</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero container">
+        <div class="hero-img">
+            <img src="https://via.placeholder.com/600x400" alt="Special Offer">
+        </div>
+        <div class="hero-text">
+            <h1>সফলতার পথে এগিয়ে যান আমাদের সাথে</h1>
+            <p>অভিজ্ঞ শিক্ষক মন্ডলী দ্বারা সুনিশ্চিত বোর্ড পরীক্ষার সেরা প্রস্তুতি নিশ্চিত করছি।</p>
+            <a href="#" class="btn-details" style="background: var(--red-accent);">ভর্তি হতে ক্লিক করুন</a>
+        </div>
+    </section>
+
+    <section class="gallery">
+        <div class="container">
+            <div class="section-title"><h2>আমাদের একাডেমি গ্যালারি</h2></div>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="https://via.placeholder.com/300x200" alt="Study Environment"></div>
+                <div class="gallery-item"><img src="https://via.placeholder.com/300x200" alt="Classroom"></div>
+                <div class="gallery-item"><img src="https://via.placeholder.com/300x200" alt="Exam Hall"></div>
+                <div class="gallery-item"><img src="https://via.placeholder.com/300x200" alt="Result Celebration"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding container">
+        <div class="section-title"><h2>আমাদের কোর্সসমূহ</h2></div>
+        <div class="course-grid">
+            <div class="course-card">
+                <img src="https://via.placeholder.com/400x250" alt="Morning Batch">
+                <div class="course-body">
+                    <h3>Morning Excellence Batch</h3>
+                    <p>সময়: সকাল ৮:০০ - দুপুর ১২:৩০</p>
+                    <a href="#" class="btn-details">বিস্তারিত দেখুন</a>
+                </div>
+            </div>
+            <div class="course-card">
+                <img src="https://via.placeholder.com/400x250" alt="Evening Batch">
+                <div class="course-body">
+                    <h3>Evening Academic Batch</h3>
+                    <p>সময়: বিকেল ৪:০০ - রাত ৮:০০</p>
+                    <a href="#" class="btn-details">বিস্তারিত দেখুন</a>
+                </div>
+            </div>
+            <div class="course-card">
+                <img src="https://via.placeholder.com/400x250" alt="Weekend Batch">
+                <div class="course-body">
+                    <h3>Weekend Special Batch</h3>
+                    <p>শুক্র ও শনিবার বিশেষ ক্লাস</p>
+                    <a href="#" class="btn-details">বিস্তারিত দেখুন</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonial section-padding">
+        <div class="container">
+            <div class="section-title"><h2 style="color: white;">শিক্ষার্থীদের ফিডব্যাক</h2></div>
+            <div class="testi-container">
+                <div class="testi-card">
+                    <p>"এখানকার গাইডলাইন আমার রেজাল্ট অনেক ইম্প্রুভ করেছে।"</p>
+                    <div class="video-placeholder"><i class="fas fa-play-circle fa-2x"></i></div>
+                </div>
+                </div>
+        </div>
+    </section>
+
+    <section class="section-padding container">
+        <div class="section-title"><h2>অভিজ্ঞ শিক্ষক মন্ডলী</h2></div>
+        <div class="teacher-grid">
+            <div class="teacher-card">
+                <div class="t-img"></div>
+                <h4>শিক্ষকের নাম</h4>
+                <p>বিষয়: গণিত</p>
+            </div>
+            </div>
+        <a href="#" class="btn-more">View All Teachers</a>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div>
+                <h4>S.S Academy</h4>
+                <p>শিক্ষাই শক্তি, সঠিক শিক্ষাই লক্ষ্য।</p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#" style="color:white">Admission Form</a></li>
+                    <li><a href="#" style="color:white">Exam Routine</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contact Us</h4>
+                <p>সিদ্ধেশ্বরী, ঢাকা</p>
+                <p>ফোন: +৮৮০ ১৭০০-০০০০০০</p>
+            </div>
+        </div>
+        <div class="copyright">© 2026 S.S Academy. All rights reserved.</div>
+    </footer>
+
+</body>
+</html>
