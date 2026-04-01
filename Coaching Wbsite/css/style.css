@@ -284,7 +284,7 @@
 }
 /* Course section css start */
 #our-course{
-    background: #f5f7fb;
+    background: #1a235e;
      padding: 70px 0px;
 }
 .course-container{
@@ -305,12 +305,13 @@
 }
 .course-top h1{
     font-size: 2.5rem;
-    color: #2B3990;
+    color: #F7941D;
     padding-bottom: 1rem;
 }
 .course-top h3{
     /* padding: 2rem 0rem; */
     font-size: 1.5rem;
+    color: #f5f7fb;
 }
 .course-items{
     background: #FFFFFF;
@@ -329,32 +330,33 @@
     color: #2B3990;
     padding-bottom: .75rem;
     padding-top: 1rem;
-    font-weight: 900;
     font-family: "Roboto", sans-serif;
 }
 .course-items-content h4{
     color: #333333;
     padding-bottom: 1.5rem;
-    font-weight: 700;
     font-size: 1rem;
 }
-.course-items-content p{
-    line-height: 1.5rem;
-    color: #2B3990;
-    font-weight: 700;
-    font-size: 12px;
+.course-items-content ul{
+    margin: 0px;
+}
+.course-items-content p {
+    color: #333333;
+    font-size: 1rem;
+    list-style: none;
 }
 .course-items-content i{
-    color:#EE1C24;
+    color:#F7941D;
     padding-right: 1rem;
 }
 
 .course-button a button{
      font-size:  1rem;
-     padding: .5rem 1rem;
+     padding: .5rem 1.5rem;
      font-weight: 700;
      background: #2B3990;
      color: #FFFFFF; 
      border: 1px solid #F7941D;
      margin-top: 1rem;
+     border-radius: .5rem;
 }
