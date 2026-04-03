@@ -1,3 +1,77 @@
-@media screen and (min-width: 768px){
-    
-}
+@media screen and (min-width: 576px) and (max-width: 768px) {
+    .manu{
+        display: none;
+    }
+    #hero, #gallary, #our-course, #teacher-card, #testimonial, #footer-section {
+        padding: 50px 0px;
+    }
+    .hero-right-content
+    {
+        width:50%;
+        text-align: left;
+    }
+    .hero-right-content{
+         width:50%;
+    }
+    .hero-right-content h1,.gallery-header h2 ,.course-top h1,.techer-top h2, .testimonail-top h2{
+        font-size: 1.75rem;
+        line-height: 2rem;
+    }
+    .hero-right-content h2{
+        display: none;
+    }
+    .join button {
+        padding: .5rem;
+        margin-right: 0.5rem;
+        font-size: .75rem;
+    }
+    .gaalry-content
+    {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    .course-top h1 {
+        padding-bottom: .5rem;
+    }
+    .course-top h3 {
+        /* padding: 2rem 0rem; */
+        font-size: 1rem;
+        
+    }
+    .course-content {
+       
+        grid-template-columns: repeat(1, 1fr);
+        gap: 2rem;
+       
+    }
+   .about-content,.testimonial-iteams{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .about-content-left{
+        display: none;
+    }
+    .teacher-content{
+        gap: 0px;
+        border-radius: 2rem;
+    }
+     .footer-content{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .footer-content p{
+        font-size: .75rem;
+        line-height: 1.3rem;
+    }
+    .footer-middle p a{
+        line-height: 1.3rem;
+    }
+    .footer-content h3{
+        font-size: 1rem;
+    }
+    .footer-left
+    {
+        grid-column: span 1;
+    }
+    .footer-content p a{
+        font-size: .75rem;
+    }
+}  

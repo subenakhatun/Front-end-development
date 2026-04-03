@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        :root {
+            --royal-blue: #2B3990;
+            --navy-deep: #1A237E;
+             --navy-deep: #19238e;
+            --bright-orange: #F7941D;
+            --sunset-orange: #e36e07;
+            --alert-red: #EE1C24;
+            --bg-smoke: #F8F9FA;
+            --white: #FFFFFF;
+            --charcoal: #333333;
+            --gray-text: #666666;
+            --alert-red: #c91b21;
+        }
+
+        body { background-color: var(--white); color: var(--charcoal); margin: 0; font-family: sans-serif; }
+
+        /* HEADER: Using Blue Duo */
+        header { 
+            background: linear-gradient(135deg, var(--royal-blue), var(--navy-deep)); 
+            padding: 60px 20px; color: var(--white); text-align: center;
+        }
+
+        /* LIVE BADGE: Using Red */
+        .live { 
+            background: var(--alert-red); color: white; padding: 5px 15px; 
+            border-radius: 4px; font-size: 12px; font-weight: bold;
+        }
+
+        /* SECTION: Using Off-White (#F8F9FA) */
+        section { background: var(--bg-smoke); padding: 40px; text-align: center; }
+
+        /* CARD: Pure White on Smoke Background */
+        .card { 
+            background: var(--white); padding: 25px; border-radius: 8px; 
+            display: inline-block; width: 250px; margin: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-bottom: 4px solid var(--royal-blue);
+        }
+
+        /* TEXT: Gray shades for hierarchy */
+        .card h3 { color: var(--charcoal); }
+        .card p { color: var(--gray-text); font-size: 14px; }
+
+        /* BUTTONS: Orange Gradient Duo */
+        .btn-action {
+            background: linear-gradient(to right, var(--bright-orange), var(--sunset-orange));
+            color: white; border: none; padding: 15px 30px; 
+            border-radius: 5px; font-weight: bold; cursor: pointer;
+            box-shadow: 0 4px 10px rgba(230, 126, 34, 0.3);
+        }
+
+        footer { background: var(--navy-deep); color: var(--white); padding: 20px; text-align: center; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <span class="live">NEW ADMISSION LIVE</span>
+        <h1>S.S. Academy</h1>
+        <p>Providing Excellence in Education & Technology</p>
+    </header>
+
+    <section>
+        <div class="card">
+            <h3>#2B3990 Blue</h3>
+            <p>Aita holo main identity. Trust build kore.</p>
+        </div>
+        <div class="card">
+            <h3>#F7941D Orange</h3>
+            <p>Aita action highlight korar jonno best color.</p>
+        </div>
+        <div class="card">
+            <h3>#333333 Gray</h3>
+            <p>Main content porar jonno aita khub eye-friendly.</p>
+        </div>
+        <br><br>
+        <button class="btn-action">START YOUR JOURNEY</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Professional Branding Guide</p>
+    </footer>
+
+</body>
+</html>

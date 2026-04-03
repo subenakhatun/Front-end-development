@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Brand Template</title>
+    <style>
+        :root {
+            --primary: #2B3990;
+            --primary-dark: #1A237E;
+            --accent: #F7941D;
+            --accent-dark: #E67E22;
+            --danger: #EE1C24;
+            --bg-light: #F8F9FA;
+            --white: #FFFFFF;
+            --text-main: #333333;
+            --text-secondary: #666666;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
+
+        body { background-color: var(--bg-light); color: var(--text-main); line-height: 1.6; }
+
+        /* Navigation */
+        nav {
+            background: var(--white);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-bottom: 3px solid var(--primary);
+        }
+
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--white);
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        .hero h1 { font-size: 2.8rem; margin-bottom: 20px; }
+        
+        .live-badge {
+            background: var(--danger);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 15px;
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink { 50% { opacity: 0.6; } }
+
+        /* Buttons */
+        .btn-main {
+            background: linear-gradient(to right, var(--accent), var(--accent-dark));
+            color: white;
+            padding: 15px 35px;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(247, 148, 29, 0.4);
+            transition: 0.3s;
+        }
+
+        .btn-main:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(247, 148, 29, 0.6); }
+
+        /* Content Section */
+        .content { padding: 60px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+
+        .card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            border-top: 5px solid var(--primary);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .card h3 { color: var(--primary-dark); margin-bottom: 15px; }
+        .card p { color: var(--text-secondary); font-size: 0.95rem; }
+
+        /* Footer */
+        footer {
+            background: var(--primary-dark);
+            color: var(--white);
+            padding: 40px 5%;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .code-snippet {
+            background: #222;
+            color: #4AF626;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            text-align: left;
+            margin-top: 20px;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">S.S. Academy</div>
+        <div style="color: var(--text-secondary)">Home | Courses | Contact</div>
+    </nav>
+
+    <section class="hero">
+        <div class="live-badge">LIVE ADMISSION OPEN</div>
+        <h1>Shaping the Future with Tech</h1>
+        <p>Expert-led training in Data Science, AI, and Professional Management.</p>
+        <br><br>
+        <button class="btn-main">Enroll Now</button>
+    </section>
+
+    <section class="content">
+        <div class="card">
+            <h3>Professionalism</h3>
+            <p>Using <b>#2B3990</b> as the base ensures your brand looks established and trustworthy.</p>
+        </div>
+        <div class="card">
+            <h3>Visual Balance</h3>
+            <p>Background <b>#F8F9FA</b> keeps the UI breathable, while <b>#333333</b> ensures high text readability.</p>
+        </div>
+        <div class="card">
+            <h3>Call to Action</h3>
+            <p><b>#F7941D</b> gradient is used for buttons to drive maximum user conversion.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 S.S. Academy. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
