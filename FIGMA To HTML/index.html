@@ -7,13 +7,123 @@
     <title>Resturent website</title>
     <!-- Fontawsome CDN Css link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- tailwind Css link -->
-     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- Daisyui links -->
-     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5.0.0-beta.1/daisyui.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    
+    <!-- Header Start -->
+     <header id="header-area">
+        <div class="container">
+            <!-- menu start -->
+            <div class="menu-top navbar ">
+                <div class="navbar-start">
+                    <div class="dropdown">
+                        <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /> </svg>
+                        </div>
+                        <ul
+                            tabindex="-1"
+                            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                            <li><a>Homepage</a></li>
+                            <li><a>Portfolio</a></li>
+                            <li><a>About</a></li>
+                        </ul>
+                    </div>
+                </div>
+                 <div class="navbar-center hidden lg:flex">
+                    <ul class="menu menu-horizontal px-1">
+                        <li><a>Home</a></li>
+                        <li>
+                            <details>
+                            <summary>Category</summary>
+                            <ul class="p-2 bg-base-100 w-40 z-1">
+                                <li><a>Submenu 1</a></li>
+                                <li><a>Submenu 2</a></li>
+                            </ul>
+                            </details>
+                        </li>
+                        <li>
+                            <details>
+                            <summary>Products</summary>
+                            <ul class="p-2 bg-base-100 w-40 z-1">
+                                <li><a>Submenu 1</a></li>
+                                <li><a>Submenu 2</a></li>
+                            </ul>
+                            </details>
+                        </li>
+                        <li>
+                            <details>
+                            <summary>Pages</summary>
+                            <ul class="p-2 bg-base-100 w-40 z-1">
+                                <li><a>Submenu 1</a></li>
+                                <li><a>Submenu 2</a></li>
+                            </ul>
+                            </details>
+                        </li>
+                        <li>
+                            <details>
+                            <summary>Blog</summary>
+                            <ul class="p-2 bg-base-100 w-40 z-1">
+                                <li><a>Submenu 1</a></li>
+                                <li><a>Submenu 2</a></li>
+                            </ul>
+                            </details>
+                        </li>
+                        <li>
+                            <details>
+                            <summary>Elements</summary>
+                            <ul class="p-2 bg-base-100 w-40 z-1">
+                                <li><a>Submenu 1</a></li>
+                                <li><a>Submenu 2</a></li>
+                            </ul>
+                            </details>
+                        </li>
+                        <li><a>Item 3</a></li>
+                    </ul>
+                </div>
+               
+                <div class="navbar-end">
+                    <a class=""><i class="fa-solid fa-phone"></i> +123 ( 456 ) ( 7890 )</a>
+                </div>
+            </div>
+            <!-- header bottom start -->
+            <div class="header-bottom navbar">
+               <div class="navbar-start">
+                    <img src="images/logo.png" alt="">
+                </div>
+                 <div class="navbar-center hidden lg:flex input input-bordered w-64 md:w-auto">
+                    <input type="text" placeholder="Search" class=" " />
+                    
+                </div>
+                  <ul class="menu menu-horizontal px-1">
+                    <li>
+                        <details>
+                        <summary>All Categories</summary>
+                        <ul class="p-2 bg-base-100 w-40 z-1">
+                            <li><a>Submenu 1</a></li>
+                            <li><a>Submenu 2</a></li>
+                        </ul>
+                        </details>
+                    </li>
+                </ul>
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <div class="navbar-end">
+                    <div class="dropdown dropdown-end">
+                        <ul class="menu menu-horizontal px-1">
+                            <li>
+                                <a href="#"><i class="fa-regular fa-user"></i>Account</a>
+                            </li>
+                            <li><a href="#"><i class="fa-regular fa-heart"></i>Wishlist</a></li>
+                            <li><a href="#"><i class="fa-solid fa-cart-shopping"></i>Cart</a></li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+     </header>
 </body>
 </html>
