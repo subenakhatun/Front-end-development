@@ -57,7 +57,7 @@
 }
 
 .navleft{
-    margin-left: 10px;
+   
 }
 .navleft button{
     padding: .5rem 1.5rem;
@@ -549,4 +549,112 @@
 }
 .footer-right p i{
     margin-right: .5rem;
+}
+
+/* ============================================================
+   RESPONSIVE STYLES (Mobile & Tablet)
+   ============================================================ */
+
+/* (Max-width: 992px) */
+@media screen and (max-width: 992px) {
+    .hero-conatianer, .about-content, .testimonial-iteams {
+        flex-direction: column;
+        text-align: center;
+        display: flex; /* Force flex for alignment */
+    }
+    
+    .hero-left-content, .hero-right-content {
+        width: 100%;
+        text-align: center;
+    }
+
+    .gaalry-content, .course-content, .teacher-content, .footer-content {
+        grid-template-columns: repeat(2, 1fr); /* ২ কলামে দেখাবে */
+    }
+
+    .about-content-let {
+        grid-column: span 2;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    
+    /* Navbar adjust */
+    .navbar-conatiner {
+        margin: 0 15px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .manu ul li {
+        display: none; 
+        
+    }
+
+    /* Hero Section */
+    #hero {
+        padding: 50px 0px;
+    }
+
+    .hero-right-content h1 {
+        font-size: 2rem;
+        line-height: 2.5rem;
+    }
+
+    /* Grid layouts to Single Column  */
+    .gaalry-content, 
+    .course-content, 
+    .teacher-content, 
+    .footer-content, 
+    .about-content, 
+    .testimonial-content,
+    .testimonial-iteams {
+        grid-template-columns: 1fr !important;
+        text-align: center;
+    }
+
+    /* Footer adjustments */
+    .footer-left {
+        grid-column: span 1;
+        margin-bottom: 30px;
+    }
+
+    .about-content-let {
+        grid-column: span 1;
+    }
+
+    /* Spacing adjustments */
+    .hero-conatianer, .about-continer, .course-container, .teacher-container, .testiominal-contianer, .footer-container {
+        margin: 0 20px;
+    }
+
+    /* Image adjustments */
+    .hero-left-content img {
+        margin-bottom: 20px;
+    }
+
+    /* Buttons */
+    .join button {
+        margin: 10px 0;
+        width: 100%; 
+    }
+}
+
+/*  (Max-width: 480px) */
+@media screen and (max-width: 480px) {
+    .gallery-header h2, .course-top h1, .techer-top h2 {
+        font-size: 1.8rem;
+    }
+    
+    .logo h3 {
+        font-size: 1.2rem;
+    }
+
+    .about-content-left{
+        display: none;
+    }
+    .join button {
+        padding: 1rem;
+        }
 }
